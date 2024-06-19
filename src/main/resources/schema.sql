@@ -1,0 +1,16 @@
+  CREATE TABLE IF NOT EXISTS USERS(
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(250) NOT NULL,
+    pass VARCHAR(250) NOT NULL
+   );
+
+   CREATE TABLE IF NOT EXISTS PASSWORDS(
+       id SERIAL PRIMARY KEY,
+       title VARCHAR(250) NOT NULL,
+       username VARCHAR(250) NOT NULL,
+       pass VARCHAR(250) NOT NULL,
+       userid INTEGER NOT NULL,
+       CONSTRAINT fk_user FOREIGN KEY (userid) REFERENCES USERS(id)
+     )
+
+
